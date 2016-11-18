@@ -1,0 +1,64 @@
+#
+# Name:
+# Date:
+# 
+# Note: Makefiles begin with a captal M
+#   Indentation MUST be with a tab
+#
+# tagets build, test, clean and submit are required.
+# 
+
+COTS= -Wall
+DEBUG= -d1
+#DEBUG=
+
+MF= Makefile.ext
+
+all:
+	make -f ${MF} test-ext
+
+boom: boom.c boom.h
+	cc ${COPTS} -o $@ $<
+	
+run: boom
+	./boom
+	./boom 10
+
+test: boom
+	-rm boom.out
+	./boom 10  > boom.out
+	./boom -u -n 2 10  >> boom.out
+	diff boom.ref boom.out
+
+test-ext: boom
+	-rm boom.out
+	-make -f ${MF} tests
+	-diff boom.ref-ext boom.out
+	-make -f ${MF} crash1
+	-make -f ${MF} crash2
+	@echo while output not specified, next two should give same output
+	-./boom -u -n 1
+	-./boom -n 1 -u
+	
+
+tests:
+	./boom -n 5 15  > boom.out
+	./boom 1 >> boom.out
+	./boom -u 1 >> boom.out
+	./boom -u -n 4 20 >> boom.out
+
+crash1: boom
+	./boom -- -10
+
+crash2: boom
+	./boom -n -1 -- 10 
+
+
+clean:
+	-rm boom boom.out
+
+submit:
+	@echo svn add your work
+	svn commit -m "submitted for grading"
+
+
