@@ -1,0 +1,6 @@
+
+
+ext-test:
+	./ringbuf abcde+-----abcdef+ghijklmno+p+-------+qrs+---------------+ > ringbuf.out
+	diff ringbuf.out extended.ref
+

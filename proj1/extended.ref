@@ -1,0 +1,58 @@
+enq: a
+enq: b
+enq: c
+enq: d
+enq: e
+ioc: 16 0 0 5
+deq: a
+deq: b
+deq: c
+deq: d
+deq: e
+enq: a
+enq: b
+enq: c
+enq: d
+enq: e
+enq: f
+ioc: 16 0 0 6
+enq: g
+enq: h
+enq: i
+enq: j
+enq: k
+enq: l
+enq: m
+enq: n
+enq: o
+ioc: 16 0 0 15
+enq: p
+ioc: 16 0 1 16
+deq: a
+deq: b
+deq: c
+deq: d
+deq: e
+deq: f
+deq: g
+ioc: 16 0 0 9
+enq: q
+enq: r
+enq: s
+ioc: 16 0 0 12
+deq: h
+deq: i
+deq: j
+deq: k
+deq: l
+deq: m
+deq: n
+deq: o
+deq: p
+deq: q
+deq: r
+deq: s
+deq: empty
+deq: empty
+deq: empty
+ioc: 16 1 0 0
