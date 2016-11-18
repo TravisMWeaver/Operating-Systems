@@ -1,0 +1,10 @@
+P-> forking 4 children
+	C-> monitor entered
+	C-> monitor leave
+	C-> monitor entered
+	C-> monitor leave
+	C-> monitor entered
+	C-> monitor leave
+	C-> monitor entered
+	C-> monitor leave
+P-> exiting
